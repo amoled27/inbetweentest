@@ -34,7 +34,7 @@
             <th>Email</th>
             <th>Phone</th>
           </tr>
-          <tr *ngFor="let user of users" cdkDrag (click)="detailUser(user)">
+          <tr *ngFor="let user of users" cdkDrag>
             <td>{{user?.name?.first}}</td>
             <td>{{user?.name?.last}}</td>
             <td>{{user?.email}}</td>
