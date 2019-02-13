@@ -1,0 +1,46 @@
+<div fxLayout="row" class="top-x">
+    <div fxFlex="50" fxLayoutAlign="center">
+    <div class="example-container">
+      <h2 class="table-heading">Table - 1</h2>
+      <!-- <pre>{{userList | json}}</pre> -->
+    
+      <table cdkDropList #partOne="cdkDropList" [cdkDropListData]="userList" [cdkDropListConnectedTo]="[partTwo]" (cdkDropListDropped)="drop($event)">
+        <tr style=" background: #f45e75e0;">
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+        <tr *ngFor="let user of userList" cdkDrag (click)="detailUser(user)"> 
+          <td>{{user?.name?.first}}</td>
+          <td>{{user?.name?.last}}</td>
+          <td>{{user?.email}}</td>
+          <td>{{user?.phone}}</td>
+        </tr>
+      </table>
+    </div>
+    
+    
+
+    </div>
+    <div fxFlex="50" fxLayoutAlign="center">
+      <div class="example-container">
+      <h2 class="table-heading">Table - 2</h2>
+        <table cdkDropList #partTwo="cdkDropList" [cdkDropListData]="users" [cdkDropListConnectedTo]="[partOne]"
+          (cdkDropListDropped)="drop($event)">
+          <tr style=" background: #f45e75e0;">
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+          <tr *ngFor="let user of users" cdkDrag (click)="detailUser(user)">
+            <td>{{user?.name?.first}}</td>
+            <td>{{user?.name?.last}}</td>
+            <td>{{user?.email}}</td>
+            <td>{{user?.phone}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+</div>

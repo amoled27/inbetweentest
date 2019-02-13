@@ -1,0 +1,23 @@
+<div fxLayout="row" class="top-x">
+  <div fxFlex="100" fxLayoutAlign="center">
+    <mat-card>
+      <div fxLayout="row">
+        <div fxFlex="100">
+          <a [routerLink]="['/']" matTooltip="Back to Homepage"><i class="material-icons" >
+              arrow_back
+            </i></a>
+        </div>
+      </div>
+      <div fxLayout="row">
+        <div fxFlex="30" fxLayoutAlign="center center">
+          <img [src]="userDetails?.picture?.large" alt="">
+        </div>
+        <div fxFlex="70" style="padding-right: 2em">
+          <h3>Name: {{userDetails?.name?.title}} {{userDetails?.name?.first}} {{userDetails?.name?.last}}</h3>
+          <h3>Phone: {{ userDetails?.phone}}</h3>
+          <h3>Email: {{userDetails?.email}}</h3>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
